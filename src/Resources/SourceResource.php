@@ -109,7 +109,8 @@ class SourceResource extends Resource
                             'default' => 12,
                             'md' => 12,
                             'lg' => 12,
-                        ]),
+                        ])
+                        ->default(config('backup-server-ui.source.cron-expression')),
 
                     Select::make('destination_id')
                         ->rules(['exists:backup_server_destinations,id'])
