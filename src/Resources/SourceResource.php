@@ -48,7 +48,7 @@ class SourceResource extends Resource
 
                     Hidden::make('healthy')
                         ->required()
-                        ->default('2'),
+                        ->default(true),
 
                     TextInput::make('name')
                         ->rules(['max:255', 'string'])
