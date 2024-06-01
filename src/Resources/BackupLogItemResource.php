@@ -120,6 +120,7 @@ class BackupLogItemResource extends Resource
                         'failed' => 'heroicon-o-x-circle',
                         'completed' => 'heroicon-o-check-circle',
                         'pending' => 'heroicon-o-play',
+                        'in_progress' => 'heroicon-o-question-mark-circle',
                     })
                     ->colors([
                         'secondary',
