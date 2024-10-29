@@ -73,6 +73,7 @@ class SourceResource extends Resource
                     TextInput::make('ssh_user')
                         ->rules(['max:255', 'string'])
                         ->required()
+                        ->default(config('backup-server-ui.source.defaults.ssh_port'))
                         ->placeholder('Ssh User')
                         ->columnSpan([
                             'default' => 12,
@@ -84,6 +85,7 @@ class SourceResource extends Resource
                         ->rules(['numeric'])
                         ->required()
                         ->numeric()
+                        ->default(config('backup-server-ui.source.defaults.ssh_port'))
                         ->placeholder('Ssh Port')
                         ->columnSpan([
                             'default' => 12,
@@ -110,7 +112,7 @@ class SourceResource extends Resource
                             'md' => 12,
                             'lg' => 12,
                         ])
-                        ->default(config('backup-server-ui.source.cron-expression')),
+                        ->default(config('backup-server-ui.source.defaults.cron-expression')),
 
                     Select::make('destination_id')
                         ->rules(['exists:backup_server_destinations,id'])
@@ -143,6 +145,7 @@ class SourceResource extends Resource
 
                     KeyValue::make('includes')
                         ->nullable()
+                        ->default(config('backup-server-ui.source.defaults.includes'))
                         ->columnSpan([
                             'default' => 12,
                             'md' => 12,
@@ -151,6 +154,7 @@ class SourceResource extends Resource
 
                     KeyValue::make('excludes')
                         ->nullable()
+                        ->default(config('backup-server-ui.source.defaults.excludes'))
                         ->columnSpan([
                             'default' => 12,
                             'md' => 12,
