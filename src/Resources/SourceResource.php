@@ -73,7 +73,7 @@ class SourceResource extends Resource
                     TextInput::make('ssh_user')
                         ->rules(['max:255', 'string'])
                         ->required()
-                        ->default(config('backup-server-ui.source.defaults.ssh_port'))
+                        ->default(config('backup-server-ui.source.defaults.ssh_user'))
                         ->placeholder('Ssh User')
                         ->columnSpan([
                             'default' => 12,
